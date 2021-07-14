@@ -2,16 +2,12 @@
 
 This is a standard c-sharp project that was started with `dotnet new react --no-https -o project-name`. In addition:
 
-  - Startup.cs has been updated so that `npm start` is not run in the background. Instead you must run `npm start` from the `ClientApp/` folder separately.
   - Postgres support is added and ready to go. The connection string can be updated in `appsettings.json`.
   - `package.json` stub has been added at the root level. This file exists only to satisfy the nodejs buildpack on heroku. It is not used in any way for the project.
-  - `ClientApp/` has been updated to include react, redux, momentjs, and axios. `cd ClientApp && npm install` and away you go.
+  - Client App is in different Repo: https://github.com/PrimeAcademy/pethotel-dotnet-frontend
 
 The client is available at `http://localhost:3000` and set up to proxy 
 back to the dotnet API. The dotnet API is available at `http://localhost:5000/` and ALSO set up to proxy non-api requests to the webpack server. Both should work, although the convention for dotnet is to go directly through the dotnet app @ `http://localhost:5000`.
-
-Please Note: If you get a 'Request failed with status code 431' error, this is likely a red herring (not a real error).
-It is likely caused because your controllers do not have any valid routes set up yet.
 
 ## Screenshots
 ### Pet Hotel UI (working with base goals met)
@@ -23,7 +19,7 @@ It is likely caused because your controllers do not have any valid routes set up
 ## Project Requirements
 
 Your job is to build the backend for the Pet Hotel! The React App is
-ready to go. For base mode you do not need to update the React App at all. Simply `cd` into the `ClientApp/` folder, run `npm install`, and 
+ready to go. For base mode you do not need to update the React App at all. Simply clone the frontend, run `npm install`, and 
 `npm start` to run the client application. Build the HTTP API until all of the functionality of the Client App is working:
 
    - All 11 jest tests are passing (see below)
@@ -82,7 +78,7 @@ For all API requests that require an id in the URL, the format `/api/resource/:i
 
 ### Jest Tests
 
-This project is ready to go with a suite of tests that hit the expected endpoints and check the reponses. Once all tests pass, your job is done! The tests are set up in the `ClientApp/` folder. Run `npm test` to run the tests. See `ClientApp/tests/http-api.test.js` for more information. Study the tests to see how the API is meant to be used!
+This project is ready to go with a suite of tests that hit the expected endpoints and check the reponses. Once all tests pass, your job is done! The tests are set up in the front end repo. Run `npm test` to run the tests. See `/tests/http-api.test.js` for more information. Study the tests to see how the API is meant to be used!
 
 ### Pet Owner Object
 
