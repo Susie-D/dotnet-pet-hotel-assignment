@@ -65,16 +65,6 @@ namespace pet_hotel
                     pattern: "{controller}/{action=Index}/{id?}");
             });
 
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "ClientApp";
-
-                if (env.IsDevelopment())
-                {
-                    spa.UseProxyToSpaDevelopmentServer("http://localhost:3000");
-                    // spa.UseReactDevelopmentServer(npmScript: "start");
-                }
-            });
         }
     }
 }
