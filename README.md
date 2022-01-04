@@ -13,6 +13,8 @@ back to the dotnet API. The dotnet API is available at `http://localhost:5000/` 
 ### Pet Hotel UI (working with base goals met)
 ![Pet Hotel Screenshot](pet-hotel.png)
 
+NOTE: Count is a Stretch Goal!
+
 ### Passing Tests (npm test)
 ![Passing Tests](tests.png)
 
@@ -45,6 +47,7 @@ A recommended approach would be to start with PetOwners, since they're the simpl
 ### Stretch Goals
 
   - Have fun with the styling! Change things around, swap colors/fonts/textures, etc. 
+  - Be able to count and show how many Pets are assoicated with Owners -- The front end is setup to recieve it already.
   - Create a new resource: `Transaction`. This transaction tracks the history of the hotel. A new transaction is created whenever a pet is checked in or checked out, a pet is created or deleted, or a pet owner is created or deleted, etc. It could be a simple timestamp and string of what happenens.
     - Create the model
     - Add the model to the ApplicationContext
