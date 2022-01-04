@@ -13,7 +13,7 @@ back to the dotnet API. The dotnet API is available at `http://localhost:5000/` 
 ### Pet Hotel UI (working with base goals met)
 ![Pet Hotel Screenshot](pet-hotel.png)
 
-NOTE: Count is a Stretch Goal!
+>> NOTE: The Pet Count column is a Stretch Goal!
 
 ### Passing Tests (npm test)
 ![Passing Tests](tests.png)
