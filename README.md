@@ -172,12 +172,10 @@ Ideally you will create a PetBreed Enum and PetColor Enum to limit the available
 
 ## HTTP Endpoint Examples
 
-These examples use the command line `curl` to execute the HTTP calls directly against the server. You can copy and paste these commands and run them locally to compare outputs. The optional tool `json_pp` (JSON Pretty Print) is used to format the JSON output. `brew install curl json_pp` will install both `curl` and `json_pp` if they are not already installed on your mac. Linux users: `apt-get install curl json_pp`.
-
 ### Create a Pet Owner
 
 ``` bash
-curl -H "Content-Type: application/json" -X POST --data '{"name": "Frank Zappa", "emailAddress": "frank@zappamusic.org"}' http://localhost:5000/api/petowners/ 2>/dev/null | json_pp
+curl -H "Content-Type: application/json" -X POST --data '{"name": "Frank Zappa", "emailAddress": "frank@zappamusic.org"}' http://localhost:5000/api/petowners/
 {
    "id" : 76,
    "name" : "Frank Zappa",
@@ -188,7 +186,7 @@ curl -H "Content-Type: application/json" -X POST --data '{"name": "Frank Zappa",
 
 ### Creating a pet associated with the pet owner
 ``` bash
-$ curl -H "Content-Type: application/json" -X POST --data '{"name": "Fido", "breed": "bulldog", "color": "Black", "petOwnerid": 76}' http://localhost:5000/api/pets 2>/dev/null | json_pp
+$ curl -H "Content-Type: application/json" -X POST --data '{"name": "Fido", "breed": "bulldog", "color": "Black", "petOwnerid": 76}' http://localhost:5000/api/pet
 {
    "id" : 40,
    "petOwner" : {
@@ -208,7 +206,7 @@ $ curl -H "Content-Type: application/json" -X POST --data '{"name": "Fido", "bre
 ### Checking in the pet
 
 ``` bash
-$ curl -H "Content-Type: application/json" -X PUT --data '' http://localhost:5000/api/pets/40/checkin 2>/dev/null | json_pp
+$ curl -H "Content-Type: application/json" -X PUT --data '' http://localhost:5000/api/pets/40/checkin
 {
    "name" : "Fido",
    "petOwner" : null,
@@ -223,7 +221,7 @@ $ curl -H "Content-Type: application/json" -X PUT --data '' http://localhost:500
 ### Checking out the pet
 
 ``` bash
-$ curl -H "Content-Type: application/json" -X PUT --data '' http://localhost:5000/api/pets/40/checkout 2>/dev/null | json_pp
+$ curl -H "Content-Type: application/json" -X PUT --data '' http://localhost:5000/api/pets/40/checkout
 {
    "checkedInAt" : null,
    "id" : 40,
