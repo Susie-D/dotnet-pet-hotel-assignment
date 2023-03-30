@@ -6,7 +6,7 @@ This is a standard c-sharp project that was started with `dotnet new webapi --no
   `<TargetFramework>net7.0</TargetFramework>`
 
   - Postgres support is added and ready to go. The connection string can be updated in `appsettings.json`.
-  - `package.json` stub has been added at the root level. This file exists only to satisfy the nodejs buildpack on heroku. It is not used in any way for the project.
+ 
   - Client App is in different Repo: https://github.com/PrimeAcademy/pethotel-dotnet-frontend
 
 The client is available at `http://localhost:3000` and set up to proxy 
