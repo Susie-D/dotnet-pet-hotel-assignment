@@ -2,7 +2,9 @@
 
 This is a standard c-sharp project that was started with `dotnet new webapi --no-https -n project-name`. In addition:
 
-  - It has dotnet 6 as its version. If you installed 7, for example, in the `dotnet-ba
+  - It has dotnet 6 as its version. If you installed 7, for example, in the `pet-hotel.csproj` file, change the target framework to:
+  `<TargetFramework>net7.0</TargetFramework>`
+
   - Postgres support is added and ready to go. The connection string can be updated in `appsettings.json`.
   - `package.json` stub has been added at the root level. This file exists only to satisfy the nodejs buildpack on heroku. It is not used in any way for the project.
   - Client App is in different Repo: https://github.com/PrimeAcademy/pethotel-dotnet-frontend
