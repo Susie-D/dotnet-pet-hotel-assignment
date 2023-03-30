@@ -1,12 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft;
 using pet_hotel.Models;
 using System;
 
@@ -33,7 +31,7 @@ namespace pet_hotel
             services.AddDbContext<ApplicationContext>(options =>
                 options.UseNpgsql(connectionString)
             );
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddMvc();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration => {
