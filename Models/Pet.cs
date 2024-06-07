@@ -8,33 +8,37 @@ namespace pet_hotel.Models
 {
     public enum PetBreedType
     {
-        Persian,
-        MaineCoon,
-        Ragdoll,
-        BritishShorthair,
-        DomesticShorthair,
-        AmericanShorthair,
+        Shepherd,
+        Poodle,
+        Beagle,
+        Bulldog,
+        Terrier,
+        Boxer,
+        Labrador,
+        Retriever,
 
     }
     public enum PetColorType
     {
-        Tabby,
-        Tortoiseshell,
-        Tuxedo,
         Black,
-        White,
-        Smoke,
-        PartiColor
+        White, Golden,
+        Tricolor,
+        Spotted,
     }
     public class Pet
     {
         public int id { get; set; }
         [Required]
         public string name { get; set; }
-        [ForeignKey("ownedBy")]
-        public int ownedById { get; set; }
-        public PetOwner ownedBy {get; set; }
+
+        [ForeignKey("petOwner")]
+        public int petOwnerId { get; set; }
+        public PetOwner petOwner { get; set; }
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public PetBreedType type { get; set;}
+        [Required]
+        public PetBreedType breed { get; set; }
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [Required]
+        public PetColorType color { get; set; }
     }
 }

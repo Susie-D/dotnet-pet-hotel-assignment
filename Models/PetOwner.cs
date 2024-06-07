@@ -10,5 +10,7 @@ namespace pet_hotel.Models
         public int id { get; set; }
         [Required]
         public string name { get; set; }
+        public string emailAddress { get; set; }
+        public int petCount { get; set; }
     }
 }
